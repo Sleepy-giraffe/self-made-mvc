@@ -1,9 +1,11 @@
 <?php
+namespace Application\Controllers;
 
+use \Core as Core;
 
-class Home extends Controller
+class Home extends Core\Controller
 {
-	
+
 	public function index()
 	{
 		echo "home/index";

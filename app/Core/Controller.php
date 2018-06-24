@@ -1,6 +1,8 @@
 <?php
 
-class Controller 
+namespace Core;
+
+class Controller
 {
 
 }

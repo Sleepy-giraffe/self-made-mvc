@@ -1,0 +1,12 @@
+{
+    "name": "mvc-app",
+    "license": "BSD",
+
+	"autoload": {
+	    "psr-4": {
+	      "Core\\": "app/Core/",
+	      "Application\\Controllers\\": "app/Controllers/"
+	    }
+	}
+
+}

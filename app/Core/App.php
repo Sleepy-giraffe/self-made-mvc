@@ -1,5 +1,10 @@
 <?php
 
+namespace Core;
+
+//using namespace, mapped in composer.json
+use \Application\Controllers as Controllers;
+
 class App
 {
 	protected $controller = "Home";
@@ -9,14 +14,16 @@ class App
 	public function __construct(){
 		$url = $this->parseUrl();
 
-		if (file_exists('../app/Controllers/' . ucfirst($url[0]).'.php')){
-			$this->controller = ucfirst($url[0]);
-			unset($url[0]);
+		//Use class name for calls, instead of including class file directly
+		$className = 'Controllers\\' . ucfirst($url[0]);
+
+		if (!class_exists($className)) {
+			$this->controller = new Controllers\Home($this);
 		}
-
-		require_once '../app/Controllers/' . $this->controller . '.php';
-
-		$this->controller = new $this->controller;
+		else {
+			$this->controller = new $className($this);
+		}
+		unset($url[0]);
 
 		if (isset($url[1])) {
 			if(method_exists($this->controller, $url[1])){
@@ -26,7 +33,6 @@ class App
 		}
 		$this->params = $url ? array_values($url) : [];
 		call_user_func_array([$this->controller, $this->action], $this->params);
-		//print_r($url);
 	}
 
 	public function parseUrl(){
