@@ -7,6 +7,8 @@
 	      "Core\\": "app/Core/",
 	      "Application\\Controllers\\": "app/Controllers/"
 	    }
-	}
-
+	},
+    "require": {
+        "twig/twig": "2.0"
+    }
 }
