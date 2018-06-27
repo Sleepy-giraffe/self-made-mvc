@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/all.css" rel="stylesheet" type="text/css" />
+        <link href="../css/main.css" rel="stylesheet" type="text/css" />
         <title>Framework-less MVC application</title>
     </head>
     <body>
-        {% block content %}{% endblock %}
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Tasks list</a>
+        </nav>
+
+        <main role="main" class="container">
+            {% block content %}{% endblock %}
+        </main>
+        <script src="../js/jquery.slim.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
     </body>
 </html>

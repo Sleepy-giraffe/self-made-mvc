@@ -1,8 +1,38 @@
 {% extends "application.html.twig" %}
 
 {% block content %}
-    <h1>Index</h1>
-    <p class="important">
-        Index page of the home controller
-    </p>
+    <table class="table table-striped">
+	  	<thead>
+		    <tr>
+		      <th scope="col">Status</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">Email</th>
+		      <th scope="col">Text</th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      	<th scope="row" class="text-center"><i class="far fa-check-circle"></i></th>
+		      	<td>Mark</td>
+		      	<td>mark@mail.com</td>
+		      	<td class="w-50">Some text</td>
+		      	<td><img src="http://via.placeholder.com/320x240"></td>
+		    </tr>
+		    <tr>
+		      	<th scope="row" class="text-center"><i class="far fa-circle"></i></th>
+		      	<td>Jacob</td>
+		      	<td>jacob@test.com</td>
+		      	<td class="w-50">Some text</td>
+		      	<td><img src="http://via.placeholder.com/320x240"></td>
+		    </tr>
+		    <tr>
+		      	<th scope="row" class="text-center"><i class="far fa-circle"></i></th>
+		      	<td>Larry</td>
+		      	<td>larry@domain.org</td>
+		      	<td class="w-50">Some text</td>
+		      	<td><img src="http://via.placeholder.com/320x240"></td>
+		    </tr>
+		  </tbody>
+	</table>
 {% endblock %}
